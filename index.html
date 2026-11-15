@@ -1,12 +1,79 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- YouTube requires a referrer on embeds (Error 153 without one). -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- Kept out of search results: ?v= wrapper pages have no content of their own. -->
     <meta name="robots" content="noindex">
-    <title>YouTube Embed</title>
+    <title>YouTube Embed for NetNewsWire Themes — thechelsuk</title>
+    <meta name="description"
+        content="Plays YouTube videos inside NetNewsWire articles by giving each embed the referrer YouTube needs. Used by thechelsuk's free NetNewsWire themes.">
+    <link rel="canonical" href="https://embed.thechels.uk/">
+    <meta name="author" content="thechelsuk">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:site_name" content="thechelsuk">
+    <meta property="og:url" content="https://embed.thechels.uk/">
+    <meta property="og:title" content="YouTube Embed for NetNewsWire Themes">
+    <meta property="og:description"
+        content="Plays YouTube videos inside NetNewsWire articles by giving each embed the referrer YouTube needs.">
+    <meta property="og:image" content="https://themes-nnw.thechels.uk/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Previews of the Claudio, Micha, Maika and Sunjiyo NetNewsWire themes">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Embed for NetNewsWire Themes">
+    <meta name="twitter:description"
+        content="Plays YouTube videos inside NetNewsWire articles by giving each embed the referrer YouTube needs.">
+    <meta name="twitter:image" content="https://themes-nnw.thechels.uk/assets/og-image.jpg">
+    <meta name="twitter:image:alt" content="Previews of the Claudio, Micha, Maika and Sunjiyo NetNewsWire themes">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://thechels.uk/#person",
+          "name": "Mat Benfield",
+          "alternateName": "thechelsuk",
+          "url": "https://thechels.uk/",
+          "sameAs": [
+            "https://links.thechels.uk/",
+            "https://github.com/thechelsuk"
+          ]
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://embed.thechels.uk/#app",
+          "url": "https://embed.thechels.uk/",
+          "name": "YouTube Embed for NetNewsWire Themes",
+          "description": "Wraps a YouTube embed so it is sent with a referrer, which YouTube requires. NetNewsWire themes embed https://embed.thechels.uk/?v={VIDEO_ID} so videos play inside the reader.",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "Any",
+          "browserRequirements": "Requires JavaScript",
+          "inLanguage": "en-GB",
+          "isAccessibleForFree": true,
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+          "license": "https://github.com/thechelsuk/uk.thechels.embed/blob/main/LICENSE.md",
+          "author": { "@id": "https://thechels.uk/#person" },
+          "publisher": { "@id": "https://thechels.uk/#person" },
+          "isPartOf": {
+            "@type": "WebSite",
+            "name": "thechelsuk",
+            "url": "https://thechels.uk/"
+          },
+          "isRelatedTo": {
+            "@type": "WebSite",
+            "name": "NetNewsWire Themes by thechelsuk",
+            "url": "https://themes-nnw.thechels.uk/"
+          }
+        }
+      ]
+    }
+    </script>
     <style>
         html, body {
             margin: 0;
@@ -27,20 +94,45 @@
             margin: 0;
             padding: 1em;
         }
+
+        .site-footer {
+            padding: 1em;
+            color: #8e8e93;
+            font-size: 13px;
+        }
+
+        .site-footer p {
+            padding: 0;
+            margin: 0 0 0.5em;
+        }
+
+        .site-footer a {
+            color: #c7c7cc;
+        }
     </style>
 </head>
 <body>
+    <!-- Shown only when no video loads; removed before the player is added. -->
+    <footer class="site-footer" id="site-footer">
+        <p>This page lets <a href="https://themes-nnw.thechels.uk/">NetNewsWire themes</a> play YouTube videos inside
+            the reader, by supplying the referrer YouTube needs.</p>
+        <p><a href="https://thechels.uk/">thechels.uk</a> · <a href="https://links.thechels.uk/">links.thechels.uk</a></p>
+        <p>© 2026 thechelsuk</p>
+    </footer>
     <script>
         (function () {
             const params = new URLSearchParams(window.location.search);
             const videoId = params.get("v") || "";
+            const footer = document.getElementById("site-footer");
 
             if (!/^[A-Za-z0-9_-]{11}$/.test(videoId)) {
                 const message = document.createElement("p");
                 message.textContent = "Invalid or missing video ID.";
-                document.body.appendChild(message);
+                document.body.insertBefore(message, footer);
                 return;
             }
+
+            footer.remove();
 
             const iframe = document.createElement("iframe");
             iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&playsinline=1`;

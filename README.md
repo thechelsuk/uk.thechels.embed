@@ -15,6 +15,7 @@ https://embed.thechels.uk/?v={VIDEO_ID}
 ```
 
 - `v` must be an 11-character YouTube video ID; anything else is rejected.
+- Without a valid ID, the page shows a short note and a footer explaining what it's for. The footer is removed before the player loads, so embeds fill the frame as before.
 - The video is embedded from `youtube-nocookie.com`.
 - Once loaded, the page posts `{ type: "thechels-embed-ready", videoId }` to its parent so the embedding page can fall back if it never arrives.
 

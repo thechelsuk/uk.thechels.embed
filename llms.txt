@@ -1,0 +1,23 @@
+# YouTube Embed for NetNewsWire Themes
+
+> A single static page at embed.thechels.uk that wraps a YouTube embed so it is sent with a referrer. YouTube refuses embeds without one ("Error 153"), and NetNewsWire renders articles from a local base URL that sends none. Embedding this page instead lets videos play inside the reader.
+
+Key facts:
+
+- Address: https://embed.thechels.uk/?v={VIDEO_ID}, where VIDEO_ID is an 11-character YouTube video ID; anything else shows "Invalid or missing video ID."
+- The video loads from youtube-nocookie.com with the referrer policy strict-origin-when-cross-origin
+- Once loaded, the page posts { type: "thechels-embed-ready", videoId } to its parent, so a theme can fall back if the message never arrives
+- No analytics, cookies, storage or server-side code; a static page on GitHub Pages
+- Free and open source under the MIT License
+- Made by thechelsuk (https://thechels.uk)
+
+## How the themes use it
+
+The NetNewsWire themes by thechelsuk turn YouTube links in an article, and the feed's own YouTube videos, into an inline iframe pointing at https://embed.thechels.uk/?v={VIDEO_ID}. YouTube then sees embed.thechels.uk as the referrer and the video plays. If the ready message hasn't arrived 10 seconds after the embed scrolls into view, the theme swaps it for the video's thumbnail, linked to YouTube.
+
+## Links
+
+- [NetNewsWire Themes](https://themes-nnw.thechels.uk/): the themes that use this page
+- [Source on GitHub](https://github.com/thechelsuk/uk.thechels.embed)
+- [thechels.uk](https://thechels.uk/): the main site
+- [Links](https://links.thechels.uk/): thechelsuk's other sites and profiles
