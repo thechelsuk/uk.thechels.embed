@@ -4,7 +4,7 @@
 
 Key facts:
 
-- Address: https://embed.thechels.uk/?v={VIDEO_ID}, where VIDEO_ID is an 11-character YouTube video ID; anything else shows "Invalid or missing video ID."
+- Address: https://embed.thechels.uk/?v={VIDEO_ID}, where VIDEO_ID is an 11-character YouTube video ID; anything else shows a "Nothing to play" card noting an invalid or missing video ID
 - The video loads from youtube-nocookie.com with the referrer policy strict-origin-when-cross-origin
 - Once loaded, the page posts { type: "thechels-embed-ready", videoId } to its parent, so a theme can fall back if the message never arrives
 - No analytics, cookies, storage or server-side code; a static page on GitHub Pages
