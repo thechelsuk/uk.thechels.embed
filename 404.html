@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- YouTube requires a referrer on embeds (Error 153 without one). -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="noindex">
+    <title>Page not found · YouTube Embed</title>
+    <meta name="author" content="thechelsuk">
+    <link rel="webmention" href="https://webmention.io/thechels.uk/webmention" />
+    <meta name="theme-color" content="#ecebe7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+    <style>
+        :root {
+            --page: #ecebe7;
+            --ink: #1d1d1f;
+            --muted: #6e6e73;
+            --paper: #fbfaf7;
+            --paper-edge: #f1efe9;
+            --screen: #1c1c1e;
+            --shadow: rgba(0, 0, 0, 0.12);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --page: #121212;
+                --ink: #f5f5f7;
+                --muted: #98989d;
+                --paper: #f4f2ed;
+                --paper-edge: #e4e1d9;
+                --shadow: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        html, body {
+            margin: 0;
+            height: 100%;
+            background: #000000;
+            color: #ffffff;
+            font: 15px/1.4 -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .has-video .placeholder {
+            display: none;
+        }
+
+        .placeholder {
+            box-sizing: border-box;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 56px 24px 32px;
+            background: var(--page);
+            color: var(--ink);
+        }
+
+        .stack {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .stack::before,
+        .stack::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--paper-edge);
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .stack::before {
+            transform: rotate(-3deg) translate(-6px, 6px);
+        }
+
+        .stack::after {
+            transform: rotate(2deg) translate(6px, 4px);
+        }
+
+        .polaroid {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            padding: 22px 22px 30px;
+            background: var(--paper);
+            color: #1d1d1f;
+            box-shadow: 0 12px 32px var(--shadow);
+        }
+
+        .screen {
+            display: grid;
+            place-items: center;
+            aspect-ratio: 16 / 9;
+            background: var(--screen);
+        }
+
+        .screen svg {
+            width: 30%;
+            height: auto;
+        }
+
+        .polaroid h1 {
+            margin: 26px 0 14px;
+            font-size: 30px;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        .caption {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin: 0;
+            padding-top: 12px;
+            border-top: 2px solid #1d1d1f;
+            font: 11px/1.4 ui-monospace, "SF Mono", Menlo, monospace;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #48484a;
+        }
+
+        .tagline {
+            max-width: 400px;
+            margin: 0;
+            font: 26px/1.25 "New York", ui-serif, Georgia, serif;
+            text-align: center;
+        }
+
+        .tagline em {
+            font-weight: 700;
+        }
+
+        .site-footer {
+            max-width: 400px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .site-footer p {
+            margin: 0 0 0.6em;
+        }
+
+        .site-footer a {
+            color: var(--ink);
+            white-space: nowrap;
+        }
+
+        code {
+            font: 12px ui-monospace, "SF Mono", Menlo, monospace;
+        }
+    </style>
+    <style>
+      .not-found { box-sizing: border-box; width: 100%; max-width: 980px; margin: 0 auto; padding: clamp(40px, 8vw, 96px) 20px; }
+      .not-found h1 { margin: 0.2em 0 0.35em; }
+      .not-found h2 { margin: 2.2rem 0 1rem; font-size: clamp(1.3rem, 3vw, 1.6rem); line-height: 1.25; }
+      .not-found-intro { max-width: 36em; margin-left: 0; }
+      .not-found-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+      .not-found-list li { margin: 0; padding: 0; }
+      .not-found-list li::before { content: none; }
+      .not-found-list a { box-sizing: border-box; display: block; height: 100%; padding: 14px 16px; border: 1px solid color-mix(in srgb, currentColor 20%, transparent); border-radius: 14px; color: inherit; text-decoration: none; }
+      .not-found-list a:hover, .not-found-list a:focus-visible { border-color: currentColor; }
+      .not-found-list strong { display: block; }
+      .not-found-list span { display: block; margin-top: 2px; font-size: 0.9em; opacity: 0.72; }
+      .not-found-report { margin-top: 2.4rem; }
+      .not-found-report a { text-decoration: underline; text-underline-offset: 0.2em; }
+
+        .not-found { width: 100%; max-width: 560px; margin: 8px 0 28px; color: var(--muted); font-size: 14px; text-align: center; }
+        .not-found a { color: var(--ink); }
+        .not-found h2 { margin: 1.6em 0 0.8em; color: var(--ink); font-size: 15px; }
+        .not-found-list { padding: 0; }
+        .not-found-list a { border-color: color-mix(in srgb, var(--ink) 18%, transparent); border-radius: 10px; padding: 10px 12px; text-align: left; }
+        .not-found-list a:hover, .not-found-list a:focus-visible { border-color: var(--ink); }
+        .not-found-list { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; }
+    </style>
+</head>
+<body>
+    <main class="placeholder" id="main">
+        <div class="stack">
+            <figure class="polaroid">
+                <div class="screen">
+                    <svg viewBox="0 0 120 84" role="img" aria-label="No video">
+                        <rect x="2" y="2" width="116" height="80" rx="22" fill="none" stroke="#f5f5f7"
+                            stroke-width="4" />
+                        <path d="M48 33a12 12 0 1 1 18 10.4c-3.6 2.1-6 4.4-6 8.6" fill="none" stroke="#f5f5f7"
+                            stroke-width="5" stroke-linecap="round" />
+                        <circle cx="60" cy="63" r="3.5" fill="#f5f5f7" />
+                    </svg>
+                </div>
+                <h1>Page not found</h1>
+                <figcaption class="caption"><span>Nothing at this address</span><span>Nº 404</span></figcaption>
+            </figure>
+        </div>
+        <p class="tagline">YouTube, playing nicely in <em>NetNewsWire</em></p>
+        <div class="not-found">
+            <p><a href="/">Go to the YouTube Embed home page</a></p>
+            <h2>Apps by thechelsuk</h2>
+            <ul class="not-found-list">
+                <li><a href="https://opiuml.thechels.uk/"><strong>Opiuml</strong><span>Podcast player</span></a></li>
+                <li><a href="https://shortkeys.thechels.uk/"><strong>ShortKeys</strong><span>Text expansion</span></a></li>
+                <li><a href="https://unsettled.thechels.uk/"><strong>Unsettled</strong><span>Spy puzzle game</span></a></li>
+                <li><a href="https://mltply.thechels.uk/"><strong>Mltply</strong><span>Maths quiz for kids</span></a></li>
+                <li><a href="https://tomoz.thechels.uk/"><strong>Tomoz</strong><span>Tomorrow's schedule</span></a></li>
+                <li><a href="https://engman.thechels.uk/"><strong>EngMan</strong><span>Coaching cards for managers</span></a></li>
+                <li><a href="https://lansdownfoundry.thechels.uk/"><strong>Lansdown Foundry</strong><span>Make your own fonts</span></a></li>
+                <li><a href="https://hiyd.uk/"><strong>Hiyd</strong><span>Jekyll posts from your iPhone</span></a></li>
+                <li><a href="https://nuchronic.uk/"><strong>Nuchronic</strong><span>Energy and symptom tracker</span></a></li>
+            </ul>
+            <h2>Elsewhere</h2>
+            <ul class="not-found-list">
+                <li><a href="https://thechels.uk/"><strong>thechels.uk</strong><span>My main site</span></a></li>
+                <li><a href="https://links.thechels.uk/"><strong>links.thechels.uk</strong><span>All my links in one place</span></a></li>
+            </ul>
+            <p class="not-found-report">Followed a broken link here? <a href="https://github.com/thechelsuk/uk.thechels.embed/issues/new/choose">Raise an issue on GitHub</a> so it can be fixed.</p>
+        </div>
+        <footer class="site-footer">
+            <p>This page lets <a href="https://themes-nnw.thechels.uk/">NetNewsWire themes</a> play YouTube videos
+                inside the reader, by supplying the referrer YouTube needs. To play a video, add
+                <code>?v=</code> and its 11&#8209;character ID to the address.</p>
+            <p><a href="https://thechels.uk/">thechels.uk</a> · <a href="https://links.thechels.uk/">links.thechels.uk</a> ·
+                <a href="https://themes-nnw.thechels.uk/">themes-nnw.thechels.uk</a></p>
+            <p>© 2026 thechelsuk</p>
+        </footer>
+    </main>
+</body>
+</html>
